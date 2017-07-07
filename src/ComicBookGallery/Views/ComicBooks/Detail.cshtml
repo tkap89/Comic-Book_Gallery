@@ -25,16 +25,25 @@
         <h2>Description: @description</h2>
         <h2>Issue Number: @issueNumber</h2>
        
-        <h2>
-            <p>Artits:</p>
+        <div>
+           Artits:
+            @if(artits.Length < 0)
+            {
+                <p>No Artists Available</p>
+            }
+
+            else
+            {
             <ul>
+                @foreach (var item in artits)
+                {
+                    <li>@item</li>
 
-
-                <li>@artits[0]</li>
-                <li>@artits[1]</li>
-                <li>@artits[2]</li>
+                }
             </ul>
-        </h2>
+            }
+
+        </div>
        
     </div>
 </body>
