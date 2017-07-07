@@ -1,50 +1,24 @@
 ﻿@{
-    Layout = null;
-    string title = "The amazing spiderman";
-    int issueNumber = 700;
-    string description = "Spiderman movie";
-    string[] artits = new string[]
-        {
-            "Artist 1 ",
-            "Artist 2 ",
-            "Artits 3 ",
-
-        };
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-        <h1>Title: @title</h1>
-        <h2>Description: @description</h2>
-        <h2>Issue Number: @issueNumber</h2>
-       
-        <div>
-           Artits:
-            @if(artits.Length < 0)
-            {
-                <p>No Artists Available</p>
-            }
+        <h1>@ViewBag.SeriesTitle</h1>
+        <h2>Issue #@ViewBag.IssueNumber</h2>
 
-            else
-            {
-            <ul>
-                @foreach (var item in artits)
-                {
-                    <li>@item</li>
+        <h5>Description:</h5>
+        <div>@Html.Raw(ViewBag.Description)</div>
 
-                }
-            </ul>
-            }
-
-        </div>
-       
-    </div>
-</body>
-</html>
+        @if (ViewBag.Artists.Length > 0)
+        {
+            <h5>Artists:</h5>
+            <div>
+                <ul>
+                    @foreach (var artist in ViewBag.Artists)
+                    {
+                        <li>@artist</li>
+                    }
+                </ul>
+            </div>
+        }
+ 
