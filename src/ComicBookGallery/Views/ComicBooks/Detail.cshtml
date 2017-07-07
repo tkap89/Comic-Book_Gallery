@@ -1,5 +1,15 @@
 ﻿@{
     Layout = null;
+    string title = "The amazing spiderman";
+    int issueNumber = 700;
+    string description = "Spiderman movie";
+    string[] artits = new string[]
+        {
+            "Artist 1 ",
+            "Artist 2 ",
+            "Artits 3 ",
+
+        };
 }
 
 <!DOCTYPE html>
@@ -11,7 +21,21 @@
 </head>
 <body>
     <div>
-        <h1>Hello from our view</h1>
+        <h1>Title: @title</h1>
+        <h2>Description: @description</h2>
+        <h2>Issue Number: @issueNumber</h2>
+       
+        <h2>
+            <p>Artits:</p>
+            <ul>
+
+
+                <li>@artits[0]</li>
+                <li>@artits[1]</li>
+                <li>@artits[2]</li>
+            </ul>
+        </h2>
+       
     </div>
 </body>
 </html>
