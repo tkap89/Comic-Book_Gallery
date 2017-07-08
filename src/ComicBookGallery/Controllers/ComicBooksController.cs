@@ -15,7 +15,7 @@ namespace ComicBookGallery.Controllers
             {
                 SeriesTitle = "The amazing spiderman",
                 IssueNumber = 700,
-                DescriptionHtml = "<p>Spiderman movie</p>",
+                DescriptionHtml = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives...<strong>will Peter Parker?</strong></p>",
                 Artists = new Artist[] 
                 { 
                   new Artist() {Name = "Mike", role="Writer" },
