@@ -10,10 +10,20 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ActionResult Detail()
-        {
+        private ComicBookRepository _comicBookRepository = null;
 
-            
+        public ComicBooksController()
+        {
+            _comicBookRepository = new ComicBookRepository();
+        }
+        public ActionResult Detail(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            var ComicBook = _comicBookRepository.GetComicBook(id.Value);
                      
 
             return View(ComicBook);
